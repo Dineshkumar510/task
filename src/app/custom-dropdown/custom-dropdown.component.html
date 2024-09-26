@@ -1,0 +1,19 @@
+<div class="container">
+  <mat-form-field appearance="outline">
+    <mat-label>Select</mat-label>
+    <mat-select (infiniteScroll)="getNextBatch()" [complete]="offset >= total" msInfiniteScroll>
+      <mat-option *ngFor="let option of options$ | async" [value]="option">
+        <div class="option-container">
+          <div class="circle-icon" [ngStyle]="{'background-color': option.color}">
+            <span class="initials">{{ option.initials }}</span>
+          </div>
+          <div class="option-text">
+            <div class="name">{{ option.name }}</div>
+            <div class="email">{{ option.email }}</div>
+          </div>
+        </div>
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
