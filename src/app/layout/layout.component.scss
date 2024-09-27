@@ -24,6 +24,33 @@ div.sideheader{
   justify-content: space-between;
 }
 
+.naration{
+  display: flex;
+  gap: 3.5rem !important;
+  font-size: 16px;
+  justify-content: end;
+}
+
+.content-header{
+  border-bottom: 0.2px solid #f3f2f2;
+}
+
+.content-mainHeader{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.content-mainHeader, .content-header, .content-project-card{
+  margin-top: 10px;
+  padding: 8px;
+}
+
+.content-project-card{
+
+}
+
 
 //Toggle Button css
 
@@ -117,6 +144,5 @@ div.sideheader{
   right: auto;
   left: 20px;
 }
-
 
 //Toggle Button css

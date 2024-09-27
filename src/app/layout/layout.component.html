@@ -25,6 +25,44 @@
       <div class="dropdown-content">
         <app-custom-dropdown></app-custom-dropdown>
       </div>
+
+      <div class="naration-time">
+          <div class="naration">
+            <span>Sum of Narration Time = {{"01:59:59"}}</span>
+
+            <span>Sum of Task Time = {{"01:59:59"}}</span>
+          </div>
+      </div>
+
+      <div class="datepicker-content">
+          <div class="datepicker">
+            <mat-form-field>
+              <mat-label>Date</mat-label>
+              <input matInput [matDatepicker]="picker">
+              <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+      </div>
+
+  </div>
+
+
+  <div class="content-project-card">
+    <!-- Project Cards -->
+    <app-project-card
+        [projectTitle]="'Automation using TestNG'"
+        [organization]="'ABCD Corp > Project 1'"
+        [time]="'01:00:00'"
+        [timeSum]="'01:00:00'">
+    </app-project-card>
+
+    <app-project-card
+        [projectTitle]="'ExpenseTesting'"
+        [organization]="'ABCD Corp > Project 1'"
+        [time]="'00:59:59'"
+        [timeSum]="'00:59:59'">
+    </app-project-card>
   </div>
 
 </div>

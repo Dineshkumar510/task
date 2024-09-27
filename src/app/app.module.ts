@@ -9,12 +9,17 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms';
 import {CustomDropdownComponent} from './custom-dropdown/custom-dropdown.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatInputModule} from '@angular/material/input';
+import {MatNativeDateModule} from '@angular/material/core';
+import { ProjectCardComponent } from './project-card/project-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
-    CustomDropdownComponent
+    CustomDropdownComponent,
+    ProjectCardComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
@@ -23,6 +28,9 @@ import {CustomDropdownComponent} from './custom-dropdown/custom-dropdown.compone
     FormsModule,
     MatFormFieldModule,
     MatSelectModule,
+    MatDatepickerModule,
+    MatInputModule,
+    MatNativeDateModule,
     MatSelectInfiniteScrollModule
   ],
   providers: [],

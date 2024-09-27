@@ -1,0 +1,105 @@
+<div class="accordion">
+  <!-- Accordion Header -->
+  <div class="accordion-mainHeader">
+      <div class="accordion-header" (click)="toggleContent()">
+        <span class="accordion-toggle">{{ isContentVisible ? '▲' : '▼' }}</span>
+        <h3>{{ projectTitle }}</h3>
+        <span class="badge"  *ngIf="!isTimeChanged">
+          <span class="time-verified-icon">✓</span> Time Verified
+        </span>
+        <span class="badge-changed"  *ngIf="isTimeChanged">
+          <span class="time-changed-icon">🕝</span> Time Changed
+        </span>
+      </div>
+
+      <div class="accordion-sideHeader">
+        <div class="accord">
+
+          <div class="info-content">
+            <span class="icon">
+              <img  class="icon-content" src="../../assets/mark.png">
+            </span>
+
+            <span class="main-accordion">
+              Narration Time = {{"01:59:59"}}
+            </span>
+          </div>
+
+          <div class="accordion-side">
+            <span>Available Time = {{"00:00:00"}}</span>
+          </div>
+
+        </div>
+      </div>
+  </div>
+
+  <!-- Accordion Body (Card Content) -->
+  <div class="accordion-body" *ngIf="isContentVisible">
+    <div class="project-info">{{ organization }}</div>
+
+    <table class="project-table">
+      <tr>
+        <th>Title*</th>
+        <th>Description*</th>
+        <th class="time-header">
+          Time*
+          <span class="sumTime">SUM <span class="calcTime">{{ totalTime }}</span></span>
+        </th>
+        <th>Top 10 Activities</th>
+      </tr>
+
+
+      <tr *ngFor="let row of rows; let i = index; let last = last">
+
+        <td class="tableContent" (dblclick)="editField(i, 'title')" style="border-left: none;">
+          <ng-container *ngIf="editedFieldIndex === i && editedFieldName === 'title'; else showTitle">
+            <input class="editable-input" [(ngModel)]="rows[i].title" (blur)="saveField()" autofocus />
+          </ng-container>
+          <ng-template #showTitle>{{ row.title }}</ng-template>
+        </td>
+
+
+        <td class="tableContent" (dblclick)="editField(i, 'description')">
+          <ng-container *ngIf="editedFieldIndex === i && editedFieldName === 'description'; else showDescription">
+            <textarea class="editable-textarea" [(ngModel)]="rows[i].description" (blur)="saveField()" rows="3" autofocus></textarea>
+          </ng-container>
+          <ng-template #showDescription>{{ row.description }}</ng-template>
+        </td>
+
+
+        <td class="tableContent" (dblclick)="editField(i, 'time')">
+          <ng-container *ngIf="editedFieldIndex === i && editedFieldName === 'time'; else showTime">
+            <input class="editable-input" [(ngModel)]="rows[i].time" (blur)="updateTime()" autofocus />
+          </ng-container>
+          <ng-template #showTime>{{ row.time }}</ng-template>
+          <!-- Display validation message if exceeds -->
+      <div class="error-message" *ngIf="row.exceeds">*Duration exceeds actuals</div>
+        </td>
+
+
+        <td *ngIf="last" style="border: none;" rowspan="1">
+          <button class="view-activities-btn">View Activities</button>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td class="tableContent" style="border-left: none;">
+          <button class="btn" (click)="addRow()">
+            <span class="icon">
+              <img class="icon-plus" src="../../assets/plus.png">
+            </span> New
+          </button>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+  </div>
+
+
+
+
+</div>
+
