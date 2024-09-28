@@ -1,0 +1,31 @@
+<div class="datepicker-content">
+    <label for="date-input">Date</label>
+    <div class="input-wrapper">
+      <input type="text" id="date-input" placeholder="Select a date" readonly (click)="toggleCalendar()" [value]="formattedDate">
+      <span class="calendar-icon">
+        <img src="../../assets/calender.png" width="80%">
+      </span>
+    </div>
+    <div id="calendar" class="calendar" [class.hidden]="!isCalendarVisible">
+      <div class="month">
+        <button class="prev" (click)="prevMonth()">&#10094;</button>
+        <span class="month-year">{{ monthYear }}</span>
+        <button class="next" (click)="nextMonth()">&#10095;</button>
+      </div>
+      <div class="weekdays">
+        <span>Sun</span>
+        <span>Mon</span>
+        <span>Tue</span>
+        <span>Wed</span>
+        <span>Thu</span>
+        <span>Fri</span>
+        <span>Sat</span>
+      </div>
+      <div class="days">
+        <ng-container *ngFor="let day of days">
+          <span (click)="selectDate(day)" [class.active]="day === selectedDay">{{ day }}</span>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+  

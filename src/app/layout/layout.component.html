@@ -1,0 +1,71 @@
+<div class="container">
+
+  <div class="content-header">
+    <div class="layout">
+        <div class="sideheader">
+            <span class="sideheader">NARRATION</span>
+            <span class="icon">
+              <img src="../../assets/info.png">
+            </span>
+        </div>
+        <div class="toggle">
+          <div class="btn-container">
+
+            <label class="switch btn-color-mode-switch">
+                  <input value="1" id="color_mode" name="color_mode" type="checkbox">
+                  <label class="btn-color-mode-switch-inner" data-off="All Narration" data-on="Daywise Narration" for="color_mode"></label>
+              </label>
+
+        </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="content-mainHeader">
+      <div class="dropdown-content">
+        <app-custom-dropdown></app-custom-dropdown>
+      </div>
+
+      <div class="naration-time">
+          <div class="naration">
+            <span>Sum of Narration Time = {{"01:59:59"}}</span>
+
+            <span>Sum of Task Time = {{"01:59:59"}}</span>
+          </div>
+      </div>
+
+      <div class="datepicker-content">
+
+        <app-custom-date-picker></app-custom-date-picker>
+        
+          <!-- <div class="datepicker">
+            <mat-form-field>
+              <mat-label>Date</mat-label>
+              <input matInput [matDatepicker]="picker">
+              <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div> -->
+      </div>
+
+  </div>
+
+
+  <div class="content-project-card">
+    <!-- Project Cards -->
+    <app-project-card
+        [projectTitle]="'Automation using TestNG'"
+        [organization]="'ABCD Corp > Project 1'"
+        [time]="'01:00:00'"
+        [timeSum]="'01:00:00'">
+    </app-project-card>
+
+    <app-project-card
+        [projectTitle]="'ExpenseTesting'"
+        [organization]="'ABCD Corp > Project 1'"
+        [time]="'00:59:59'"
+        [timeSum]="'00:59:59'">
+    </app-project-card>
+  </div>
+
+</div>

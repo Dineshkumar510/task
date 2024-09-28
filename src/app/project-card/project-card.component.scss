@@ -1,0 +1,229 @@
+.accordion {
+  background-color: #fff;
+  border-radius: 0px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+}
+
+.accordion-mainHeader{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion-header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  cursor: pointer;
+  gap: 1rem;
+}
+
+.accordion-header h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.icon-content{
+  width: 24px;
+}
+
+.icon-plus{
+  width: 14px;
+  color: #888;
+}
+
+.accordion-toggle {
+  font-size: 16px;
+  color: #888;
+}
+
+.accordion-side{
+  color: #b1b1b1;
+  display: flex;
+  justify-content: end;
+}
+
+.accordion-body {
+  padding: 0px 10px;
+}
+
+.info-content{
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.tableContent{
+  color: #888;
+}
+
+.btn {
+  padding: 5px 14px;
+  font-size: 16px;
+  background-color: #fff;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+
+}
+
+.btn:hover {
+  background-color: #fff; /* Darker shade on hover */
+}
+
+.btn:active {
+  background-color: #fff; /* Even darker shade on click */
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(235, 244, 255, 0.5); /* Outline on focus */
+}
+
+.main-accordion{
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.badge {
+  background-color: #66bb6a;
+  color: white;
+  border-radius: 12px;
+  padding: 2px 8px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.badge-changed {
+  background-color: #0D47A1;
+  color: white;
+  border-radius: 12px;
+  padding: 2px 8px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.time-verified-icon {
+  font-size: 16px;
+  margin-right: 5px;
+}
+
+.error-message{
+  color: #ff5722;
+}
+
+
+
+.project-info {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+.project-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.project-table th, .project-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.project-table th {
+  background-color: #f1f1f1;
+  text-align: left;
+}
+
+.view-activities-btn {
+  background-color: #ff5722;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0 auto; /* Ensures that the button itself is horizontally centered */
+  display: block; /* Centers the button within the cell */
+}
+
+.action{
+  display: flex; /* Use Flexbox to align items */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+.view-activities-btn:hover {
+  background-color: #e64a19;
+}
+
+/* Style for editable input fields */
+.editable-input {
+  width: 50%;
+  padding: 6px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.editable-input:focus {
+  border-color: #66afe9;
+  outline: none;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+/* Style for editable textarea fields */
+.editable-textarea {
+  width: 50%;
+  padding: 8px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical; /* Allow resizing only vertically */
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.editable-textarea:focus {
+  border-color: #66afe9;
+  outline: none;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+.sumTime{
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.calcTime{
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.time-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Optional: Add padding for table cells */
+.tableContent {
+  padding: 8px;
+}

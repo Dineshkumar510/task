@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="custom-dropdown">
+    <div class="dropdown-label" (click)="toggleDropdown()">
+      <div *ngIf="selectedOption" class="option-container">
+        <div class="circle-icon" [ngStyle]="{'background-color': selectedOption.color}">
+          <span class="initials">{{ selectedOption.initials }}</span>
+        </div>
+        <div class="option-text">
+          <div class="name">{{ selectedOption.name }}</div>
+        </div>
+      </div>
+      <div *ngIf="!selectedOption">
+        Select
+      </div>
+      <!-- Accordion Toggle Icon -->
+      <span class="accordion-toggle">{{ dropdownOpen ? '▲' : '▼' }}</span>
+    </div>
+
+    <div class="dropdown-list" [class.show]="dropdownOpen" (scroll)="onScroll($event)">
+      <div *ngFor="let option of options$ | async" class="dropdown-option" [attr.data-value]="option"
+        (click)="selectOption(option)">
+        <div class="option-container">
+          <div class="circle-icon" [ngStyle]="{'background-color': option.color}">
+            <span class="initials">{{ option.initials }}</span>
+          </div>
+          <div class="option-text">
+            <div class="name">{{ option.name }}</div>
+            <div class="email">{{ option.email }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
