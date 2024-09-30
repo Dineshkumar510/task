@@ -37,7 +37,7 @@
       <div class="datepicker-content">
 
         <app-custom-date-picker></app-custom-date-picker>
-        
+
           <!-- <div class="datepicker">
             <mat-form-field>
               <mat-label>Date</mat-label>
@@ -57,15 +57,47 @@
         [projectTitle]="'Automation using TestNG'"
         [organization]="'ABCD Corp > Project 1'"
         [time]="'01:00:00'"
-        [timeSum]="'01:00:00'">
+        [timeSum]="'01:00:00'"
+        (contentVisibilityChange)="onContentVisibilityChange($event)"
+        (selectedRowsChange)="onSelectedRowsChange($event)">
     </app-project-card>
 
     <app-project-card
         [projectTitle]="'ExpenseTesting'"
         [organization]="'ABCD Corp > Project 1'"
         [time]="'00:59:59'"
-        [timeSum]="'00:59:59'">
+        [timeSum]="'00:59:59'"
+        (contentVisibilityChange)="onContentVisibilityChange($event)"
+        (selectedRowsChange)="onSelectedRowsChange($event)">
     </app-project-card>
+  </div>
+
+  <div class="content-project-card-delete" *ngIf="anyContentVisible">
+      <div class="content-delete-button">
+          <div class="delete-button">
+              <button type="button" class="delete" (click)="openModal()">
+                  <img src="../../assets/delete.png">
+              </button>
+          </div>
+      </div>
+  </div>
+
+
+  <!-- Modal Structure -->
+  <div id="myModal" class="modal" [ngClass]="{'show-modal': isModalVisible}">
+    <div class="modal-content">
+      <!-- <span class="close" (click)="closeModal()">&times;</span> -->
+      <p class="content-font">Are you sure that you want to delete the selected narrations?</p>
+      <div class="empty-content">
+        <div class="empty-modal-content">
+            <span class="empty-modal-title">This cannot be undone</span>
+        </div>
+      </div>
+      <div class="modal-buttons">
+        <button class="cancel-btn" (click)="closeModal()">Cancel</button>
+        <button class="confirm-btn" (click)="deleteSelectedRows()">Yes, Delete</button>
+      </div>
+    </div>
   </div>
 
 </div>

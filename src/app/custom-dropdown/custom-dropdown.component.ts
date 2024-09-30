@@ -16,11 +16,11 @@ interface Option {
   styleUrls: ['./custom-dropdown.component.scss']
 })
 export class CustomDropdownComponent implements OnInit {
-  total = 200; 
-  limit = 8;   
-  offset = 0;  
+  total = 200;
+  limit = 8;
+  offset = 0;
   dropdownOpen = false;
-  selectedOption: Option | null = null;  
+  selectedOption: Option | null = null;
 
   options = new BehaviorSubject<Option[]>([]);
   options$: Observable<Option[]>;
@@ -35,24 +35,22 @@ export class CustomDropdownComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getNextBatch(); 
+    this.getNextBatch();
   }
 
   toggleDropdown() {
     this.dropdownOpen = !this.dropdownOpen;
     if (this.dropdownOpen && this.offset === 0) {
-      this.getNextBatch();  
+      this.getNextBatch();
     }
   }
 
   getNextBatch() {
     if (this.offset >= this.total) return;
-
     const result = Array.from({ length: this.limit }).map(() => this.generateRandomOption());
-    console.log('Loading new batch:', result); 
     this.options.next(result);
     this.offset += this.limit;
-    this.cdr.detectChanges();  
+    this.cdr.detectChanges();
   }
 
   generateRandomOption(): Option {
@@ -82,12 +80,12 @@ export class CustomDropdownComponent implements OnInit {
   onScroll(event: Event) {
     const element = event.target as HTMLElement;
     if (element.scrollHeight - element.scrollTop <= element.clientHeight + 1) {
-      this.getNextBatch();  
+      this.getNextBatch();
     }
   }
 
   selectOption(option: Option) {
     this.selectedOption = option;
-    this.dropdownOpen = false;  
+    this.dropdownOpen = false;
   }
 }

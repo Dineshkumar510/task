@@ -51,6 +51,24 @@ div.sideheader{
 
 }
 
+.delete-button{
+  position: absolute;
+  bottom: 7%;
+  right: 4%;
+}
+
+.delete{
+  border-radius: 20px;
+    padding: 8px 10px;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    -webkit-box-shadow: 13px -2px 13px 4px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 13px -2px 13px 4px rgba(0, 0, 0, 0.75);
+    box-shadow: 4px -2px 8px -3px rgba(0, 0, 0, 0.75);
+    cursor: pointer;
+}
+
 
 //Toggle Button css
 
@@ -71,13 +89,18 @@ div.sideheader{
   width: 370px;
   height: 40px;
   background-color: #fff;
-  border-radius: 18px;
+  border-radius: 12px;
   overflow: hidden;
   position: relative;
   transition: all 0.3s ease;
   display: block;
   border: 2px solid #cccccc;
-  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1);
+  /*Subtleinnershadow*/
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
 }
 
 .btn-color-mode-switch > label.btn-color-mode-switch-inner:before {
@@ -92,15 +115,20 @@ div.sideheader{
   color: #222;
 }
 
+.naration-time{
+  margin-left: 28%;
+}
+
 .btn-color-mode-switch > label.btn-color-mode-switch-inner:after {
   content: attr(data-off);
   width: 184px;
   height: 25px;
   background: #FFEDE8;
   color: #C55439 !important;
-  border-radius: 15px;
+  border-radius: 8px;
   position: absolute;
   font-size: 20px;
+  font-weight: 500 !important;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -111,6 +139,10 @@ div.sideheader{
   box-shadow: 0px 0px 6px -2px #111;
   padding: 5px 0px;
   font-weight: 600;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
 }
 
 .btn-color-mode-switch input[type="checkbox"] {
@@ -139,5 +171,95 @@ div.sideheader{
   left: 45px;
 }
 
-
 //Toggle Button css
+
+
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Black background with opacity */
+}
+
+/* Show modal class */
+.show-modal {
+  display: block; /* Show modal */
+}
+
+.content-font{
+  font-size: 22px;
+  line-height: 30px;
+  text-align: center;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 24%;
+  height: 34%;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  border-radius: 16px;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  -o-border-radius: 16px;
+}
+
+.empty-content{
+  min-height: 14rem;
+}
+
+/* Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Modal Buttons */
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.empty-modal-content{
+  position: absolute;
+  top: 42%;
+  right: 46%;
+}
+
+.modal-buttons button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.confirm-btn {
+  background-color: #ff5722; /* Red for delete */
+  color: white;
+}
+
+.cancel-btn {
+  background-color: #ddd;
+}
+

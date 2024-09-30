@@ -189,6 +189,23 @@
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(102, 175, 233, 0.6);
 }
 
+
+.editable-input1 {
+  width: 90%;
+  padding: 6px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.editable-input1:focus {
+  border-color: #66afe9;
+  outline: none;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
 /* Style for editable textarea fields */
 .editable-textarea {
   width: 50%;
@@ -226,4 +243,72 @@
 /* Optional: Add padding for table cells */
 .tableContent {
   padding: 8px;
+}
+
+
+
+
+/* Hide the default checkbox */
+.container-check input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+ }
+
+ .container-check {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 20px;
+  user-select: none;
+ }
+
+ /* Create a custom checkbox */
+ .checkmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 1.2em;
+  width: 1.2em;
+  background: #606062;
+  border-radius: 5px;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.30);
+ }
+
+ /* When the checkbox is checked, add a blue background */
+ .container-check input:checked ~ .checkmark {
+  background-image: linear-gradient(#65e555, #21c70b);
+ }
+
+ /* Create the checkmark/indicator (hidden when not checked) */
+ .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+ }
+
+ /* Show the checkmark when checked */
+ .container-check input:checked ~ .checkmark:after {
+  display: block;
+ }
+
+ /* Style the checkmark/indicator */
+ .container-check .checkmark:after {
+  left: 0.45em;
+  top: 0.25em;
+  width: 0.25em;
+  height: 0.5em;
+  border: solid white;
+  border-width: 0 0.15em 0.15em 0;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+}
+
+ .bg-green {
+  background-color: rgb(225, 252, 225);
 }

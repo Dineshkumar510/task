@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: space-between;  /* Space between text and toggle */
   width: 100%;
-  min-width: 203px;
+  min-width: 260px;
   border-radius: 6px;
   border: none;
   font-size: 16px;
@@ -40,7 +40,7 @@
 .dropdown-list.show {
   display: block;
   min-height: 300px;
-  max-width: 250px;
+  max-width: 300px;
 }
 
 .dropdown-option {

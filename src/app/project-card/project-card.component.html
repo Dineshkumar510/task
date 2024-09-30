@@ -33,6 +33,8 @@
       </div>
   </div>
 
+
+
   <!-- Accordion Body (Card Content) -->
   <div class="accordion-body" *ngIf="isContentVisible">
     <div class="project-info">{{ organization }}</div>
@@ -49,15 +51,20 @@
       </tr>
 
 
-      <tr *ngFor="let row of rows; let i = index; let last = last">
-
-        <td class="tableContent" (dblclick)="editField(i, 'title')" style="border-left: none;">
+      <tr *ngFor="let row of rows; let i = index; let last = last" [ngClass]="{'bg-green': row.selected}">
+        <td class="tableContent" (dblclick)="editField(i, 'title')" style="border-left: none; display: flex; gap: 1.2rem;">
+          <label class="container-check">
+            <input
+              type="checkbox"
+              [(ngModel)]="row.selected"
+              (change)="handleRowSelection(row, $event)">
+            <div class="checkmark"></div>
+          </label>
           <ng-container *ngIf="editedFieldIndex === i && editedFieldName === 'title'; else showTitle">
             <input class="editable-input" [(ngModel)]="rows[i].title" (blur)="saveField()" autofocus />
           </ng-container>
           <ng-template #showTitle>{{ row.title }}</ng-template>
         </td>
-
 
         <td class="tableContent" (dblclick)="editField(i, 'description')">
           <ng-container *ngIf="editedFieldIndex === i && editedFieldName === 'description'; else showDescription">
@@ -66,21 +73,19 @@
           <ng-template #showDescription>{{ row.description }}</ng-template>
         </td>
 
-
         <td class="tableContent" (dblclick)="editField(i, 'time')">
           <ng-container *ngIf="editedFieldIndex === i && editedFieldName === 'time'; else showTime">
             <input class="editable-input" [(ngModel)]="rows[i].time" (blur)="updateTime()" autofocus />
           </ng-container>
           <ng-template #showTime>{{ row.time }}</ng-template>
-          <!-- Display validation message if exceeds -->
-      <div class="error-message" *ngIf="row.exceeds">*Duration exceeds actuals</div>
+          <div class="error-message" *ngIf="row.exceeds">*Duration exceeds actuals</div>
         </td>
 
-
-        <td *ngIf="last" style="border: none;" rowspan="1">
+        <td *ngIf="last" style="border: none; background-color: #fff !important;" rowspan="2">
           <button class="view-activities-btn">View Activities</button>
         </td>
       </tr>
+
 
 
       <tr>

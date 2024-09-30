@@ -50,7 +50,7 @@ export class CustomDatePickerComponent {
   formatDate(year: number, month: number, day: number): string {
     const formattedMonth = (month + 1).toString().padStart(2, '0');
     const formattedDay = day.toString().padStart(2, '0');
-    return `${formattedMonth}/${formattedDay}/${year}`;
+    return `${formattedDay}/${formattedMonth}/${year}`;
   }
 
   // Navigate to the previous month
