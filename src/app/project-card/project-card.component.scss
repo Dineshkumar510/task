@@ -312,3 +312,30 @@
  .bg-green {
   background-color: rgb(225, 252, 225);
 }
+
+.activity-card-table{
+  background-color: #fff;
+    width: 245px;
+    height: 75px;
+}
+
+.main-activity{
+  display: block;
+}
+
+.activity-date{
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.activity-card{
+  background-color: #f1f1f1;
+  height: 75px;
+  border-radius: 5px;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+}
+
+

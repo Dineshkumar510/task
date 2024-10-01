@@ -21,12 +21,12 @@
             </span>
 
             <span class="main-accordion">
-              Narration Time = {{"01:59:59"}}
+              Narration Time = {{totalTime}}
             </span>
           </div>
 
           <div class="accordion-side">
-            <span>Available Time = {{"00:00:00"}}</span>
+            <span>Available Time = {{availableTime}}</span>
           </div>
 
         </div>
@@ -61,14 +61,14 @@
             <div class="checkmark"></div>
           </label>
           <ng-container *ngIf="editedFieldIndex === i && editedFieldName === 'title'; else showTitle">
-            <input class="editable-input" [(ngModel)]="rows[i].title" (blur)="saveField()" autofocus />
+            <input class="editable-input" [(ngModel)]="rows[i].title" (blur)="saveField(row, $event)" autofocus />
           </ng-container>
           <ng-template #showTitle>{{ row.title }}</ng-template>
         </td>
 
         <td class="tableContent" (dblclick)="editField(i, 'description')">
           <ng-container *ngIf="editedFieldIndex === i && editedFieldName === 'description'; else showDescription">
-            <textarea class="editable-textarea" [(ngModel)]="rows[i].description" (blur)="saveField()" rows="3" autofocus></textarea>
+            <textarea class="editable-textarea" [(ngModel)]="rows[i].description" (blur)="saveField(row, $event)" rows="3" autofocus></textarea>
           </ng-container>
           <ng-template #showDescription>{{ row.description }}</ng-template>
         </td>
@@ -81,9 +81,25 @@
           <div class="error-message" *ngIf="row.exceeds">*Duration exceeds actuals</div>
         </td>
 
-        <td *ngIf="last" style="border: none; background-color: #fff !important;" rowspan="2">
-          <button class="view-activities-btn">View Activities</button>
+        <td *ngIf="last && !activitycard" style="border: none; background-color: #fff !important;" rowspan="2">
+          <button class="view-activities-btn" (click)="toggleActivitycard()">View Activities</button>
         </td>
+
+        <td class="activity-card-table" rowspan="2" *ngIf="activitycard">
+          <div class="activity-card">
+            <div class="activity-info">
+                <span class="main-activity">
+                  <span class="activity-icon">&nbsp; ✓ &nbsp;&nbsp;</span>
+                  Manual Entry
+                </span>
+                <span class="activity-date">
+                  <img src="../../assets/clock.png">
+                  01:00:00
+                </span>
+            </div>
+          </div>
+        </td>
+
       </tr>
 
 
